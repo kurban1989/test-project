@@ -1,0 +1,107 @@
+.message {
+  position: relative;
+  flex: 1 1 auto;
+  padding: 1rem;
+  min-width: 100%;
+  overflow-y: auto;
+  height: calc(100vh - 350px);
+
+  @media (min-width: 1024px) {
+    max-width: 100%;
+    min-width: 500px;
+  }
+
+  &__avatar {
+    border-radius: 50%;
+    border: 1px solid #e4e5e9;
+    overflow: hidden;
+    height: 50px;
+    width: 50px;
+    margin-right: 15px;
+
+    &--outgoing {
+      order: 2;
+      margin-right: 0;
+      margin-left: 15px;
+    }
+
+    img {
+      height: inherit;
+      width: inherit;
+    }
+  }
+
+  &__cotainer {  
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 25px;
+    padding: 7px;
+    position: relative;
+    min-width: 100px;
+
+    @media (max-width: 768px) {
+      max-width: 70%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &--incoming {
+      background-color: #82ddb7;
+    }
+    &--outgoing {
+      background-color: #82a6dd;
+    }
+  }
+
+  &__time {
+    position: absolute;
+    left: 0;
+    bottom: -16px;
+    color: rgba(139, 139, 139, 0.623);
+    font-size: 10px;
+
+    &--outgoing {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  &__card {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: none;
+    width: 91%;
+
+    &--incoming {
+      justify-content: flex-start;
+    }
+    &--outgoing {
+      justify-content: flex-end;
+    }
+  }
+
+  &__double-screen {
+    flex-direction: row;
+    width: 100%;
+
+    .chat {
+      width: 50%;
+      flex-basis: 50%;
+
+      @media (max-width: 1024px) {
+        width: 100%;
+        height: 50vh !important;
+        border-bottom: 3px solid black;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+    }
+  }
+}
+.box-message-other {
+  background: #e7f7ff;
+}
